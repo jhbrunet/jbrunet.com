@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Julian Brunet | Alpine Ski Racing Coach & Athlete Portfolio</title>
+  <meta name="description" content="Julian Brunet — Head U18 FIS Coach at Mont Garceau, former Équipe du Québec & Top-500 FIS Alpine Racer (34.95 PB). Biomechanics, trajectory physics, and athlete development." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-base: #06080c;
+      --bg-surface: #0c1017;
+      --bg-card: #111722;
+      --bg-card-hover: #161f2e;
+      --border-dim: #1e293b;
+      --border-bright: #334155;
+      --text-main: #f1f5f9;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --accent-cyan: #00f0ff;
+      --accent-cyan-dim: rgba(0, 240, 255, 0.12);
+      --accent-orange: #ff5500;
+      --accent-green: #10b981;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-base);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+    }
+
+    body {
+      background-color: var(--bg-base);
+      background-image: 
+        linear-gradient(to right, rgba(30, 41, 59, 0.18) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(30, 41, 59, 0.18) 1px, transparent 1px);
+      background-size: 48px 48px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Telemetry Top Bar */
+    .telemetry-bar {
+      background: #040609;
+      border-bottom: 1px solid var(--border-dim);
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--text-dim);
+      padding: 0.45rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .telemetry-bar span.live-dot {
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      background: var(--accent-cyan);
+      border-radius: 50%;
+      margin-right: 6px;
+      box-shadow: 0 0 8px var(--accent-cyan);
+    }
+
+    /* Navbar */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(6, 8, 12, 0.88);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-dim);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      font-family: var(--font-mono);
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: 0.05em;
+      color: var(--text-main);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .brand-accent {
+      color: var(--accent-cyan);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-family: var(--font-mono);
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent-cyan);
+    }
+
+    .lang-btn {
+      background: var(--bg-card);
+      border: 1px solid var(--accent-cyan);
+      color: var(--accent-cyan);
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 0.4rem 0.8rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .lang-btn:hover {
+      background: var(--accent-cyan);
+      color: #000;
+    }
+
+    /* Layout Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    section {
+      padding: 5rem 0;
+      border-bottom: 1px solid var(--border-dim);
+    }
+
+    /* Section Headers */
+    .section-tag {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--accent-cyan);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .section-title {
+      font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+
+    .section-desc {
+      color: var(--text-muted);
+      max-width: 680px;
+      margin-bottom: 2.5rem;
+      font-size: 1rem;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 5.5rem 0 4.5rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.95fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      color: var(--accent-cyan);
+      background: var(--accent-cyan-dim);
+      border: 1px solid rgba(0, 240, 255, 0.3);
+      padding: 0.35rem 0.75rem;
+      border-radius: 4px;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.3rem, 5vw, 3.75rem);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero h1 .highlight {
+      color: var(--accent-cyan);
+    }
+
+    .hero p {
+      font-size: 1.08rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      max-width: 600px;
+    }
+
+    .cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .btn-primary {
+      background: var(--accent-cyan);
+      color: #040609;
+      font-family: var(--font-mono);
+      font-weight: 700;
+      font-size: 0.84rem;
+      padding: 0.8rem 1.35rem;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
+    }
+
+    .btn-secondary {
+      background: var(--bg-card);
+      color: var(--text-main);
+      border: 1px solid var(--border-bright);
+      font-family: var(--font-mono);
+      font-weight: 500;
+      font-size: 0.84rem;
+      padding: 0.8rem 1.25rem;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: border-color 0.2s ease, color 0.2s ease;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
+    }
+
+    /* Telemetry KPI Strip */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .kpi-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-dim);
+      border-left: 3px solid var(--accent-cyan);
+      padding: 1.15rem;
+      border-radius: 4px;
+    }
+
+    .kpi-card.orange {
+      border-left-color: var(--accent-orange);
+    }
+
+    .kpi-value {
+      font-family: var(--font-mono);
+      font-size: 1.65rem;
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1.1;
+      margin-bottom: 0.35rem;
+    }
+
+    .kpi-label {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Labeled Photo Placeholders */
+    .photo-placeholder {
+      background: linear-gradient(135deg, #0d131d 0%, #131c2b 100%);
+      border: 1px dashed var(--border-bright);
+      border-radius: 6px;
+      padding: 2rem;
+      min-height: 360px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .photo-placeholder::before {
+      content: "TELEMETRY VISUAL FEED // PLACEHOLDER";
+      position: absolute;
+      top: 12px;
+      left: 14px;
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--accent-cyan);
+      letter-spacing: 0.08em;
+    }
+
+    .photo-placeholder::after {
+      content: "REC [●]";
+      position: absolute;
+      top: 12px;
+      right: 14px;
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--accent-orange);
+    }
+
+    .placeholder-icon {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--accent-cyan);
+      border: 1px solid rgba(0, 240, 255, 0.35);
+      background: var(--accent-cyan-dim);
+      padding: 0.4rem 0.8rem;
+      border-radius: 4px;
+      margin-bottom: 1rem;
+    }
+
+    .placeholder-title {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--text-main);
+      margin-bottom: 0.4rem;
+    }
+
+    .placeholder-sub {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      max-width: 320px;
+    }
+
+    /* Skills & Competencies Grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .skill-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-dim);
+      padding: 1.5rem;
+      border-radius: 6px;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .skill-card:hover {
+      border-color: var(--accent-cyan);
+      transform: translateY(-2px);
+    }
+
+    .skill-index {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--accent-cyan);
+      margin-bottom: 0.6rem;
+      display: block;
+    }
+
+    .skill-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.6rem;
+      color: var(--text-main);
+    }
+
+    .skill-card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* DLS & FIS Telemetry Section */
+    .telemetry-layout {
+      display: grid;
+      grid-template-columns: 1.35fr 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .table-wrapper {
+      background: var(--bg-card);
+      border: 1px solid var(--border-dim);
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+
+    .table-header-bar {
+      padding: 0.9rem 1.25rem;
+      background: var(--bg-surface);
+      border-bottom: 1px solid var(--border-dim);
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--text-main);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+
+    th, td {
+      padding: 0.85rem 1.1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border-dim);
+    }
+
+    th {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      letter-spacing: 0.06em;
+      background: rgba(12, 16, 23, 0.6);
+    }
+
+    td {
+      font-family: var(--font-mono);
+    }
+
+    tr:hover td {
+      background: var(--bg-card-hover);
+    }
+
+    .rank-badge {
+      display: inline-block;
+      padding: 0.15rem 0.5rem;
+      border-radius: 3px;
+      font-weight: 700;
+      font-size: 0.78rem;
+      background: rgba(148, 163, 184, 0.12);
+      color: var(--text-main);
+    }
+
+    .rank-badge.podium {
+      background: var(--accent-cyan-dim);
+      color: var(--accent-cyan);
+      border: 1px solid rgba(0, 240, 255, 0.4);
+    }
+
+    .rank-badge.top5 {
+      background: rgba(255, 85, 0, 0.15);
+      color: #ff7733;
+      border: 1px solid rgba(255, 85, 0, 0.35);
+    }
+
+    .fis-panel {
+      background: var(--bg-card);
+      border: 1px solid var(--border-dim);
+      border-radius: 6px;
+      padding: 1.5rem;
+    }
+
+    .fis-panel h3 {
+      font-size: 1.15rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .fis-stat-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-dim);
+      padding: 1rem;
+      border-radius: 4px;
+      margin-bottom: 1rem;
+    }
+
+    .fis-stat-box .num {
+      font-family: var(--font-mono);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
+    }
+
+    .fis-stat-box .lbl {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 0.2rem;
+    }
+
+    /* Lineage Timeline */
+    .timeline {
+      position: relative;
+      padding-left: 2rem;
+      border-left: 2px solid var(--border-bright);
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
+    }
+
+    .timeline-item {
+      position: relative;
+      background: var(--bg-card);
+      border: 1px solid var(--border-dim);
+      padding: 1.35rem 1.5rem;
+      border-radius: 6px;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -2.42rem;
+      top: 1.5rem;
+      width: 12px;
+      height: 12px;
+      background: var(--bg-base);
+      border: 2px solid var(--accent-cyan);
+      border-radius: 50%;
+    }
+
+    .timeline-phase {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--accent-cyan);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.35rem;
+      display: block;
+    }
+
+    .timeline-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.45rem;
+    }
+
+    .timeline-desc {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+    }
+
+    /* U18 Squad Section */
+    .coaching-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .squad-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
+      gap: 0.75rem;
+      margin-top: 1.25rem;
+    }
+
+    .athlete-chip {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-dim);
+      padding: 0.75rem 1rem;
+      border-radius: 4px;
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .athlete-chip span.tag {
+      font-size: 0.68rem;
+      color: var(--accent-cyan);
+      background: var(--accent-cyan-dim);
+      padding: 0.1rem 0.4rem;
+      border-radius: 3px;
+    }
+
+    /* Social & Connect Hub */
+    .social-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+    }
+
+    .social-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-dim);
+      padding: 1.25rem;
+      border-radius: 6px;
+      text-decoration: none;
+      color: var(--text-main);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .social-card:hover {
+      border-color: var(--accent-cyan);
+      transform: translateY(-2px);
+    }
+
+    .social-platform {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--accent-cyan);
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .social-handle {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+    }
+
+    .social-desc {
+      font-size: 0.83rem;
+      color: var(--text-muted);
+    }
+
+    footer {
+      padding: 2.5rem 0;
+      text-align: center;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--text-dim);
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .telemetry-layout,
+      .coaching-grid {
+        grid-template-columns: 1fr;
+      }
+      .kpi-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Telemetry Readout -->
+  <div class="telemetry-bar">
+    <div><span class="live-dot"></span>FIS COMPETITOR ID: #256564 // JULIAN BRUNET</div>
+    <div>DISCIPLINE: ALPINE RACING & COACHING // MONT GARCEAU, QC</div>
+  </div>
+
+  <!-- Navigation -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="brand">JULIAN BRUNET <span class="brand-accent">// TELEMETRY</span></a>
+      <ul class="nav-links">
+        <li><a href="#skills" data-i18n="nav_skills">01. SKILLS</a></li>
+        <li><a href="#telemetry" data-i18n="nav_telemetry">02. RESULTS & DATA</a></li>
+        <li><a href="#lineage" data-i18n="nav_lineage">03. LINEAGE</a></li>
+        <li><a href="#coaching" data-i18n="nav_coaching">04. U18 SQUAD</a></li>
+        <li><a href="#connect" data-i18n="nav_connect">05. CONNECT</a></li>
+      </ul>
+      <button class="lang-btn" id="langToggle" onclick="toggleLanguage()">FR // FRANÇAIS</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <div class="hero-badge" data-i18n="hero_badge">
+            HEAD U18 FIS COACH • ÉQUIPE DU QUÉBEC ALUMNUS • 34.95 FIS PTS PB
+          </div>
+          <h1 data-i18n="hero_title">
+            ENGINEERING SPEED ON <span class="highlight">INJECTED SNOW.</span>
+          </h1>
+          <p data-i18n="hero_sub">
+            I am Julian Brunet—a former Top-500 FIS alpine ski racer and current Head U18 FIS Men's Coach at Mont Garceau. On skis since age two, I combine active sub-35 FIS point racing sharpness with motorsport trajectory physics, European biomechanics, and data-driven athlete calibration.
+          </p>
+          <div class="cta-group">
+            <a href="https://www.fis-ski.com/DB/general/athlete-biography.html?sectorcode=AL&competitorid=256564&type=result" target="_blank" rel="noopener" class="btn-primary" data-i18n="cta_fis_results">
+              OFFICIAL FIS RESULTS ↗
+            </a>
+            <a href="https://www.fis-ski.com/DB/general/athlete-biography.html?sectorcode=AL&listid=397&competitorid=256564&type=fispoints" target="_blank" rel="noopener" class="btn-secondary" data-i18n="cta_fis_points">
+              FIS POINTS HISTORY ↗
+            </a>
+            <a href="#connect" class="btn-secondary" data-i18n="cta_connect">
+              @KINGJULIANHQ HUB
+            </a>
+          </div>
+        </div>
+
+        <!-- Labeled Photo Placeholder 1 -->
+        <div class="photo-placeholder">
+          <div class="placeholder-icon">[IMAGE SLOT 01 // HERO_ACTION.JPG]</div>
+          <div class="placeholder-title" data-i18n="ph1_title">High-Edge-Angle GS Action or Start Gate Shot</div>
+          <div class="placeholder-sub" data-i18n="ph1_sub">
+            Drop your favorite racing or on-hill coaching photo into an images/ folder and replace this div with: &lt;img src="images/hero.jpg"&gt;
+          </div>
+        </div>
+      </div>
+
+      <!-- KPI Telemetry Strip -->
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-value">34.95</div>
+          <div class="kpi-label" data-i18n="kpi_1">Career Best FIS Points (2-Race Comeback)</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-value">TOP 500</div>
+          <div class="kpi-label" data-i18n="kpi_2">Peak World FIS Ranking (Quebec Team)</div>
+        </div>
+        <div class="kpi-card orange">
+          <div class="kpi-value">#2 DLS</div>
+          <div class="kpi-label" data-i18n="kpi_3">U16 Overall Vice-Champion (Tremblant)</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-value">U18 FIS</div>
+          <div class="kpi-label" data-i18n="kpi_4">Head Coach • Club de Ski Mont Garceau</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 01. Coaching & Technical Skills -->
+    <section id="skills">
+      <span class="section-tag" data-i18n="sec1_tag">01 // CORE COMPETENCIES & METHODOLOGY</span>
+      <h2 class="section-title" data-i18n="sec1_title">Modern Alpine Coaching Architecture</h2>
+      <p class="section-desc" data-i18n="sec1_desc">
+        There is no single rigid dogma in ski racing—only physics, biomechanics, and what makes an athlete faster down the fall line. I test every concept on my own skis before teaching it.
+      </p>
+
+      <div class="skills-grid">
+        <div class="skill-card">
+          <span class="skill-index">SYS.01 // BIOMECHANICS & LINE</span>
+          <h3 data-i18n="sk1_t">Trajectory & Force Physics</h3>
+          <p data-i18n="sk1_d">
+            Integrating motorsport racing-line theory with European technical mechanics: optimizing apex timing, shin-to-boot leverage, hip projection, and pressure management across gate transitions.
+          </p>
+        </div>
+        <div class="skill-card">
+          <span class="skill-index">SYS.02 // ACTIVE DEMONSTRATION</span>
+          <h3 data-i18n="sk2_t">Live On-Snow Execution</h3>
+          <p data-i18n="sk2_d">
+            Unlike retired legacy coaches, I still ski sub-35 FIS point speeds. I experience the exact snow-surface chatter, ruts, and injection conditions as my athletes and demonstrate corrections in real time.
+          </p>
+        </div>
+        <div class="skill-card">
+          <span class="skill-index">SYS.03 // INDIVIDUAL CALIBRATION</span>
+          <h3 data-i18n="sk3_t">Anthropometric & Mental Tuning</h3>
+          <p data-i18n="sk3_d">
+            No two racers move alike. I calibrate technical cues, tactical risk profiles, and off-season dryland bridging to each athlete's height, leverage ratios, strengths, and psychology.
+          </p>
+        </div>
+        <div class="skill-card">
+          <span class="skill-index">SYS.04 // MODERN KNOWLEDGE TRANSFER</span>
+          <h3 data-i18n="sk4_t">High-Signal Video & Digital Lab</h3>
+          <p data-i18n="sk4_d">
+            Translating complex race telemetry and high-frame-rate video analysis into clear, direct, ego-free adjustments on the hill and through @kingjulianhq educational breakdowns.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02. Athlete Telemetry: DLS Rankings & FIS Progression -->
+    <section id="telemetry">
+      <span class="section-tag" data-i18n="sec2_tag">02 // VERIFIED ATHLETE TELEMETRY</span>
+      <h2 class="section-title" data-i18n="sec2_title">From #29 in U12 to #2 DLS & Top-500 FIS</h2>
+      <p class="section-desc" data-i18n="sec2_desc">
+        My progression wasn't handed to me as an early child prodigy—it was built season by season through relentless mechanical refinement in the Laurentian Ski Division (DLS) at Mont Tremblant, S1 Racing, and the Quebec Provincial Team.
+      </p>
+
+      <div class="telemetry-layout">
+        <!-- Verified DLS Table -->
+        <div class="table-wrapper">
+          <div class="table-header-bar">
+            <span data-i18n="tbl_title">DLS CIRCUIT GENERAL STANDINGS (2014–2020)</span>
+            <span>CLUB: TREMB // ADN: 2004</span>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th data-i18n="th_season">Season</th>
+                <th data-i18n="th_cat">Category</th>
+                <th data-i18n="th_rank">Overall Rank</th>
+                <th data-i18n="th_cohort">2004 Cohort</th>
+                <th data-i18n="th_pts">Total Pts</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2014–2015</td>
+                <td>U12 (Yr 1)</td>
+                <td><span class="rank-badge">#29 Overall</span></td>
+                <td>#4 (2004)</td>
+                <td>728 pts</td>
+              </tr>
+              <tr>
+                <td>2015–2016</td>
+                <td>U12 (Yr 2)</td>
+                <td><span class="rank-badge top5">#4 Overall</span></td>
+                <td>#3 (2004)</td>
+                <td>2,030 pts</td>
+              </tr>
+              <tr>
+                <td>2016–2017</td>
+                <td>U14 (Yr 1 / Grp A)</td>
+                <td><span class="rank-badge">#13 Overall</span></td>
+                <td>#3 (2004)</td>
+                <td>858 pts</td>
+              </tr>
+              <tr>
+                <td>2017–2018</td>
+                <td>U14 (Yr 2 / Grp E)</td>
+                <td><span class="rank-badge podium">🥉 #3 Overall</span></td>
+                <td>#3 (2004)</td>
+                <td>2,120 pts</td>
+              </tr>
+              <tr>
+                <td>2018–2019</td>
+                <td>U16 (Yr 1 / Grp E)</td>
+                <td><span class="rank-badge">#8 Overall</span></td>
+                <td>#3 (2004)</td>
+                <td>1,130 pts</td>
+              </tr>
+              <tr>
+                <td>2019–2020</td>
+                <td>U16 (Yr 2 / Grp E)</td>
+                <td><span class="rank-badge podium">🥈 #2 Overall</span></td>
+                <td>#2 (2004)</td>
+                <td>1,700 pts</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- FIS Career & Comeback Card -->
+        <div class="fis-panel">
+          <span class="skill-index">FIS DATABASE // COMPETITOR #256564</span>
+          <h3 data-i18n="fis_title">The 34.95-Point Conceptual Comeback</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.25rem;" data-i18n="fis_desc">
+            After reaching the Top 500 in the FIS world rankings and earning selection to the Quebec Provincial Team, a severe training crash at Mont Adstock ended my season prematurely. Pivoting to coaching deepened my biomechanical understanding so drastically that when I entered just 2 comeback races with zero gate training, I scored a career-best 34.95 FIS points.
+          </p>
+          <div class="fis-stat-box">
+            <div class="num">34.95 FIS PTS</div>
+            <div class="lbl" data-i18n="fis_stat1">Personal Best Result — Achieved via pure conceptual & tactical mastery without formal training volume.</div>
+          </div>
+          <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+            <a href="https://www.fis-ski.com/DB/general/athlete-biography.html?sectorcode=AL&competitorid=256564&type=result" target="_blank" rel="noopener" class="btn-primary" style="font-size: 0.76rem; padding: 0.6rem 1rem;" data-i18n="btn_fis_res">
+              VERIFY RESULTS ON FIS-SKI.COM ↗
+            </a>
+            <a href="https://www.fis-ski.com/DB/general/athlete-biography.html?sectorcode=AL&listid=397&competitorid=256564&type=fispoints" target="_blank" rel="noopener" class="btn-secondary" style="font-size: 0.76rem; padding: 0.6rem 1rem;" data-i18n="btn_fis_pts">
+              POINTS PROGRESSION ↗
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03. Coaching & Mentorship Lineage -->
+    <section id="lineage">
+      <span class="section-tag" data-i18n="sec3_tag">03 // TECHNICAL LINEAGE & INFLUENCES</span>
+      <h2 class="section-title" data-i18n="sec3_title">Built From Diverse World-Class Mentors</h2>
+      <p class="section-desc" data-i18n="sec3_desc">
+        Every great coach I worked under taught me that there is a lesson in every system—and that questioning our approach without ego is the fastest path to speed.
+      </p>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <span class="timeline-phase">STAGE 01 // U12 YEAR 2 — MONT TREMBLANT</span>
+          <div class="timeline-title" data-i18n="lin1_t">Nils Pailler & Norbert Poitras — The Spark of Speed</div>
+          <div class="timeline-desc" data-i18n="lin1_d">
+            Two young, high-energy coaches who instilled the pure joy, instinct, and athleticism of alpine ski racing—proving that high performance starts with passion on the hill.
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <span class="timeline-phase">STAGE 02 // U14 YEAR 2 TO FIS YEAR 1 (COVID) — MONT TREMBLANT</span>
+          <div class="timeline-title" data-i18n="lin2_t">My Father — Experimental Precision & Radical Simplicity</div>
+          <div class="timeline-desc" data-i18n="lin2_d">
+            Working closely with my dad from U14 through my first FIS year during COVID taught me to be boldly experimental while keeping feedback ruthlessly simple and direct on the exact variable that matters.
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <span class="timeline-phase">STAGE 03 // FIS YEAR 2 — S1 RACING (PRIVATE TEAM)</span>
+          <div class="timeline-title" data-i18n="lin3_t">Jordan Trudel & Claudel May Plouffe — Private Team Breakout</div>
+          <div class="timeline-desc" data-i18n="lin3_d">
+            Transitioned to S1 Racing for my first full post-COVID FIS campaign, delivering a breakout racing season under a focused, high-accountability private team model.
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <span class="timeline-phase">STAGE 04 // FIS YEAR 3 — S1 RACING & SPECIALIST MENTORS</span>
+          <div class="timeline-title" data-i18n="lin4_t">Noemi Dalla Costa, Antony Hérisset, Christophe Beauvais & Sascha Sorio</div>
+          <div class="timeline-desc" data-i18n="lin4_d">
+            Combined the relentless drive of young Italian coach Noemi Dalla Costa and experienced Quebec coach Antony Hérisset with specialized trajectory work under former motorsport racing driver Christophe Beauvais and deep European alpine biomechanics under Sascha Sorio.
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <span class="timeline-phase">STAGE 05 // ÉQUIPE DU QUÉBEC — PROVINCIAL TEAM</span>
+          <div class="timeline-title" data-i18n="lin5_t">Jonatan Blanchard & Samuel Lacroix — Data-Driven Elite Standards</div>
+          <div class="timeline-desc" data-i18n="lin5_d">
+            Selected to the Quebec Provincial Team under highly experienced coach Jonatan Blanchard and rigorous, data-driven Samuel Lacroix before a training injury at Mont Adstock prompted my transition into high-performance coaching.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04. Coaching Track Record & U18 Squad -->
+    <section id="coaching">
+      <span class="section-tag" data-i18n="sec4_tag">04 // COACHING TRACK RECORD & ACTIVE ROSTER</span>
+      <h2 class="section-title" data-i18n="sec4_title">Club de Ski Mont Garceau — U16 to U18 FIS</h2>
+      
+      <div class="coaching-grid">
+        <div>
+          <div class="skill-card" style="margin-bottom: 1.25rem;">
+            <span class="skill-index">YEAR 01 COACHING MILESTONE // U16 & PROGRAMME PLUS</span>
+            <h3 data-i18n="c_u16_t">2 Weekend-Program Athletes Qualified for Provincials</h3>
+            <p data-i18n="c_u16_d">
+              In my debut coaching season at Mont Garceau, I took over a weekend U16 group alongside extra training days with Programme Plus—guiding two weekend-program racers all the way to Provincial Championship qualification.
+            </p>
+          </div>
+
+          <div class="skill-card">
+            <span class="skill-index">CURRENT ASSIGNMENT // HEAD COACH — U18 FIS MEN</span>
+            <h3 data-i18n="c_u18_t">2026–2027 Mont Garceau U18 FIS Cohort (8 Athletes)</h3>
+            <p data-i18n="c_u18_d">
+              Leading the brand-new first-year U18 FIS group at Mont Garceau—building individualized technical, tactical, and physical profiles across a full FIS racing calendar:
+            </p>
+            <div class="squad-grid">
+              <div class="athlete-chip">Théo Morisette <span class="tag">U18 FIS</span></div>
+              <div class="athlete-chip">Caleb Bibeau <span class="tag">U18 FIS</span></div>
+              <div class="athlete-chip">Arnaud Marrier <span class="tag">U18 FIS</span></div>
+              <div class="athlete-chip">Derek Nelson <span class="tag">U18 FIS</span></div>
+              <div class="athlete-chip">Méric Pelletier <span class="tag">U18 FIS</span></div>
+              <div class="athlete-chip">Maxime Autran <span class="tag">U18 FIS</span></div>
+              <div class="athlete-chip">Antoine Richard <span class="tag">U18 FIS</span></div>
+              <div class="athlete-chip">Philippe Bernard <span class="tag">U18 FIS</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Labeled Photo Placeholder 2 -->
+        <div class="photo-placeholder">
+          <div class="placeholder-icon">[IMAGE SLOT 02 // GARCEAU_SQUAD.JPG]</div>
+          <div class="placeholder-title" data-i18n="ph2_title">Mont Garceau U18 FIS Team & On-Hill Video Analysis</div>
+          <div class="placeholder-sub" data-i18n="ph2_sub">
+            Placeholder for a team shot at Mont Garceau or an on-hill video debrief with your U18 FIS athletes.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05. Digital Lab & Connect -->
+    <section id="connect">
+      <span class="section-tag" data-i18n="sec5_tag">05 // DIGITAL ECOSYSTEM & CONTACT</span>
+      <h2 class="section-title" data-i18n="sec5_title">Follow the Lab & Connect</h2>
+      <p class="section-desc" data-i18n="sec5_desc">
+        Modernizing alpine ski education through short-form biomechanical breakdowns, line physics, and transparent coaching insights. Reach out directly via Instagram or Facebook for coaching inquiries and collaborations.
+      </p>
+
+      <div class="social-grid">
+        <a href="https://www.instagram.com/kingjulianhq/" target="_blank" rel="noopener" class="social-card">
+          <div>
+            <div class="social-platform">INSTAGRAM // SKI EDUCATION LAB</div>
+            <div class="social-handle">@kingjulianhq ↗</div>
+            <div class="social-desc" data-i18n="soc1_d">Technical breakdowns, trajectory physics, biomechanics, and modern race education.</div>
+          </div>
+        </a>
+
+        <a href="https://www.tiktok.com/@kingjulianhq" target="_blank" rel="noopener" class="social-card">
+          <div>
+            <div class="social-platform">TIKTOK // SHORT-FORM TELEMETRY</div>
+            <div class="social-handle">@kingjulianhq ↗</div>
+            <div class="social-desc" data-i18n="soc2_d">On-snow drills, gate-to-gate line analysis, and rapid coaching debriefs.</div>
+          </div>
+        </a>
+
+        <a href="https://www.instagram.com/julian.hyun.brunet/" target="_blank" rel="noopener" class="social-card">
+          <div>
+            <div class="social-platform">INSTAGRAM // PERSONAL & ATHLETE</div>
+            <div class="social-handle">@julian.hyun.brunet ↗</div>
+            <div class="social-desc" data-i18n="soc3_d">Personal racing journey, training life, and direct messaging for coaching inquiries.</div>
+          </div>
+        </a>
+
+        <a href="https://www.facebook.com/julian.hyun.brunet/" target="_blank" rel="noopener" class="social-card">
+          <div>
+            <div class="social-platform">FACEBOOK // NETWORK</div>
+            <div class="social-handle">Julian Hyun Brunet ↗</div>
+            <div class="social-desc" data-i18n="soc4_d">Connect with parents, club directors, and the Quebec alpine racing community.</div>
+          </div>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      JULIAN BRUNET // JBRUNET.COM // FIS ID #256564 // BUILT FOR HIGH-SPEED EXECUTION
+    </div>
+  </footer>
+
+  <!-- Bilingual EN / FR Dictionary Engine -->
+  <script>
+    let currentLang = 'en';
+
+    const translations = {
+      en: {
+        nav_skills: "01. SKILLS",
+        nav_telemetry: "02. RESULTS & DATA",
+        nav_lineage: "03. LINEAGE",
+        nav_coaching: "04. U18 SQUAD",
+        nav_connect: "05. CONNECT",
+        hero_badge: "HEAD U18 FIS COACH • ÉQUIPE DU QUÉBEC ALUMNUS • 34.95 FIS PTS PB",
+        hero_title: "ENGINEERING SPEED ON <span class='highlight'>INJECTED SNOW.</span>",
+        hero_sub: "I am Julian Brunet—a former Top-500 FIS alpine ski racer and current Head U18 FIS Men's Coach at Mont Garceau. On skis since age two, I combine active sub-35 FIS point racing sharpness with motorsport trajectory physics, European biomechanics, and data-driven athlete calibration.",
+        cta_fis_results: "OFFICIAL FIS RESULTS ↗",
+        cta_fis_points: "FIS POINTS HISTORY ↗",
+        cta_connect: "@KINGJULIANHQ HUB",
+        ph1_title: "High-Edge-Angle GS Action or Start Gate Shot",
+        ph1_sub: "Drop your favorite racing or on-hill coaching photo into an images/ folder and replace this div with: <img src='images/hero.jpg'>",
+        kpi_1: "Career Best FIS Points (2-Race Comeback)",
+        kpi_2: "Peak World FIS Ranking (Quebec Team)",
+        kpi_3: "U16 Overall Vice-Champion (Tremblant)",
+        kpi_4: "Head Coach • Club de Ski Mont Garceau",
+        sec1_tag: "01 // CORE COMPETENCIES & METHODOLOGY",
+        sec1_title: "Modern Alpine Coaching Architecture",
+        sec1_desc: "There is no single rigid dogma in ski racing—only physics, biomechanics, and what makes an athlete faster down the fall line. I test every concept on my own skis before teaching it.",
+        sk1_t: "Trajectory & Force Physics",
+        sk1_d: "Integrating motorsport racing-line theory with European technical mechanics: optimizing apex timing, shin-to-boot leverage, hip projection, and pressure management across gate transitions.",
+        sk2_t: "Live On-Snow Execution",
+        sk2_d: "Unlike retired legacy coaches, I still ski sub-35 FIS point speeds. I experience the exact snow-surface chatter, ruts, and injection conditions as my athletes and demonstrate corrections in real time.",
+        sk3_t: "Anthropometric & Mental Tuning",
+        sk3_d: "No two racers move alike. I calibrate technical cues, tactical risk profiles, and off-season dryland bridging to each athlete's height, leverage ratios, strengths, and psychology.",
+        sk4_t: "High-Signal Video & Digital Lab",
+        sk4_d: "Translating complex race telemetry and high-frame-rate video analysis into clear, direct, ego-free adjustments on the hill and through @kingjulianhq educational breakdowns.",
+        sec2_tag: "02 // VERIFIED ATHLETE TELEMETRY",
+        sec2_title: "From #29 in U12 to #2 DLS & Top-500 FIS",
+        sec2_desc: "My progression wasn't handed to me as an early child prodigy—it was built season by season through relentless mechanical refinement in the Laurentian Ski Division (DLS) at Mont Tremblant, S1 Racing, and the Quebec Provincial Team.",
+        tbl_title: "DLS CIRCUIT GENERAL STANDINGS (2014–2020)",
+        th_season: "Season",
+        th_cat: "Category",
+        th_rank: "Overall Rank",
+        th_cohort: "2004 Cohort",
+        th_pts: "Total Pts",
+        fis_title: "The 34.95-Point Conceptual Comeback",
+        fis_desc: "After reaching the Top 500 in the FIS world rankings and earning selection to the Quebec Provincial Team, a severe training crash at Mont Adstock ended my season prematurely. Pivoting to coaching deepened my biomechanical understanding so drastically that when I entered just 2 comeback races with zero gate training, I scored a career-best 34.95 FIS points.",
+        fis_stat1: "Personal Best Result — Achieved via pure conceptual & tactical mastery without formal training volume.",
+        btn_fis_res: "VERIFY RESULTS ON FIS-SKI.COM ↗",
+        btn_fis_pts: "POINTS PROGRESSION ↗",
+        sec3_tag: "03 // TECHNICAL LINEAGE & INFLUENCES",
+        sec3_title: "Built From Diverse World-Class Mentors",
+        sec3_desc: "Every great coach I worked under taught me that there is a lesson in every system—and that questioning our approach without ego is the fastest path to speed.",
+        lin1_t: "Nils Pailler & Norbert Poitras — The Spark of Speed",
+        lin1_d: "Two young, high-energy coaches who instilled the pure joy, instinct, and athleticism of alpine ski racing—proving that high performance starts with passion on the hill.",
+        lin2_t: "My Father — Experimental Precision & Radical Simplicity",
+        lin2_d: "Working closely with my dad from U14 through my first FIS year during COVID taught me to be boldly experimental while keeping feedback ruthlessly simple and direct on the exact variable that matters.",
+        lin3_t: "Jordan Trudel & Claudel May Plouffe — Private Team Breakout",
+        lin3_d: "Transitioned to S1 Racing for my first full post-COVID FIS campaign, delivering a breakout racing season under a focused, high-accountability private team model.",
+        lin4_t: "Noemi Dalla Costa, Antony Hérisset, Christophe Beauvais & Sascha Sorio",
+        lin4_d: "Combined the relentless drive of young Italian coach Noemi Dalla Costa and experienced Quebec coach Antony Hérisset with specialized trajectory work under former motorsport racing driver Christophe Beauvais and deep European alpine biomechanics under Sascha Sorio.",
+        lin5_t: "Jonatan Blanchard & Samuel Lacroix — Data-Driven Elite Standards",
+        lin5_d: "Selected to the Quebec Provincial Team under highly experienced coach Jonatan Blanchard and rigorous, data-driven Samuel Lacroix before a training injury at Mont Adstock prompted my transition into high-performance coaching.",
+        sec4_tag: "04 // COACHING TRACK RECORD & ACTIVE ROSTER",
+        sec4_title: "Club de Ski Mont Garceau — U16 to U18 FIS",
+        c_u16_t: "2 Weekend-Program Athletes Qualified for Provincials",
+        c_u16_d: "In my debut coaching season at Mont Garceau, I took over a weekend U16 group alongside extra training days with Programme Plus—guiding two weekend-program racers all the way to Provincial Championship qualification.",
+        c_u18_t: "2026–2027 Mont Garceau U18 FIS Cohort (8 Athletes)",
+        c_u18_d: "Leading the brand-new first-year U18 FIS group at Mont Garceau—building individualized technical, tactical, and physical profiles across a full FIS racing calendar:",
+        ph2_title: "Mont Garceau U18 FIS Team & On-Hill Video Analysis",
+        ph2_sub: "Placeholder for a team shot at Mont Garceau or an on-hill video debrief with your U18 FIS athletes.",
+        sec5_tag: "05 // DIGITAL ECOSYSTEM & CONTACT",
+        sec5_title: "Follow the Lab & Connect",
+        sec5_desc: "Modernizing alpine ski education through short-form biomechanical breakdowns, line physics, and transparent coaching insights. Reach out directly via Instagram or Facebook for coaching inquiries and collaborations.",
+        soc1_d: "Technical breakdowns, trajectory physics, biomechanics, and modern race education.",
+        soc2_d: "On-snow drills, gate-to-gate line analysis, and rapid coaching debriefs.",
+        soc3_d: "Personal racing journey, training life, and direct messaging for coaching inquiries.",
+        soc4_d: "Connect with parents, club directors, and the Quebec alpine racing community."
+      },
+      fr: {
+        nav_skills: "01. COMPÉTENCES",
+        nav_telemetry: "02. RÉSULTATS & DATA",
+        nav_lineage: "03. MENTORS",
+        nav_coaching: "04. ÉQUIPE U18",
+        nav_connect: "05. CONTACT",
+        hero_badge: "ENTRAÎNEUR-CHEF U18 FIS • ANCIEN ÉQUIPE DU QUÉBEC • PB 34.95 PTS FIS",
+        hero_title: "L'INGÉNIERIE DE LA VITESSE SUR <span class='highlight'>NEIGE INJECTÉE.</span>",
+        hero_sub: "Je suis Julian Brunet — ancien coureur alpin du Top 500 mondial FIS et actuel entraîneur-chef U18 FIS masculin au Mont Garceau. Sur des skis depuis l'âge de deux ans, je combine l'exécution active à moins de 35 points FIS avec la physique des trajectoires issue du sport automobile, la biomécanique européenne et l'analyse de données.",
+        cta_fis_results: "RÉSULTATS OFFICIELS FIS ↗",
+        cta_fis_points: "HISTORIQUE POINTS FIS ↗",
+        cta_connect: "LABO @KINGJULIANHQ",
+        ph1_title: "Photo d'action GS (Prise de carre) ou Départ",
+        ph1_sub: "Déposez votre photo d'action ou de coaching dans un dossier images/ et remplacez ce bloc par : <img src='images/hero.jpg'>",
+        kpi_1: "Meilleur résultat FIS en carrière (Retour en 2 courses)",
+        kpi_2: "Sommet classement mondial FIS (Équipe du Québec)",
+        kpi_3: "Vice-Champion Général U16 DLS (Tremblant)",
+        kpi_4: "Entraîneur-Chef • Club de Ski Mont Garceau",
+        sec1_tag: "01 // COMPÉTENCES CLÉS & MÉTHODOLOGIE",
+        sec1_title: "Architecture Moderne du Coaching Alpin",
+        sec1_desc: "Il n'existe aucun dogme unique en ski de compétition — seulement la physique, la biomécanique et ce qui rend un athlète plus rapide dans la ligne de pente. Je teste et démontre chaque principe sur mes propres skis.",
+        sk1_t: "Physique des Trajectoires & Forces",
+        sk1_d: "Intégration des lignes de course du sport automobile et de la mécanique européenne : timing d'apex, levier tibia-botte, projection du bassin et gestion de pression.",
+        sk2_t: "Démonstration Active sur Neige",
+        sk2_d: "Contrairement aux entraîneurs retraités, je skie toujours à un niveau sous les 35 points FIS. Je ressens exactement les mêmes conditions d'injection et de tracé que mes athlètes.",
+        sk3_t: "Calibration Anthropométrique & Mentale",
+        sk3_d: "Chaque coureur est unique. J'adapte la technique, la tactique, la préparation physique hors-neige et l'approche mentale au gabarit et au profil de chaque athlète.",
+        sk4_t: "Analyse Vidéo & Labo Numérique",
+        sk4_d: "Traduction de l'analyse vidéo haute fréquence en repères simples, directs et sans ego sur la piste ainsi que via les capsules éducatives @kingjulianhq.",
+        sec2_tag: "02 // TÉLÉMÉTRIE ET PROGRESSION VÉRIFIÉE",
+        sec2_title: "Du #29 en U12 au #2 DLS & Top 500 FIS",
+        sec2_desc: "Ma progression s'est bâtie saison après saison par un travail mécanique rigoureux sur le circuit de la Division Laurentienne de Ski (DLS) à Mont-Tremblant, chez S1 Racing, jusqu'à l'Équipe du Québec.",
+        tbl_title: "CLASSEMENT GÉNÉRAL CIRCUIT DLS (2014–2020)",
+        th_season: "Saison",
+        th_cat: "Catégorie",
+        th_rank: "Rang Général",
+        th_cohort: "Rang 2004",
+        th_pts: "Points Totaux",
+        fis_title: "Le Retour Conceptuel à 34.95 Points FIS",
+        fis_desc: "Après avoir atteint le Top 500 mondial FIS et intégré l'Équipe du Québec, une blessure à l'entraînement au Mont Adstock a mis fin à ma saison. Ma transition vers le coaching a tellement approfondi ma compréhension du ski qu'en effectuant un retour de seulement 2 courses sans entraînement dans les portes, j'ai signé mon record personnel à 34.95 points FIS.",
+        fis_stat1: "Record Personnel — Réalisé uniquement grâce à la maîtrise biomécanique et tactique, sans volume d'entraînement.",
+        btn_fis_res: "VÉRIFIER LES RÉSULTATS SUR FIS-SKI.COM ↗",
+        btn_fis_pts: "PROGRESSION DES POINTS ↗",
+        sec3_tag: "03 // LIGNÉE TECHNIQUE & MENTORS",
+        sec3_title: "Forgé par une Diversité de Mentors d'Élite",
+        sec3_desc: "Chaque entraîneur avec qui j'ai travaillé m'a appris qu'il n'y a pas une seule vérité absolue en ski, mais que questionner et tester son approche sans ego mène aux meilleurs progrès.",
+        lin1_t: "Nils Pailler & Norbert Poitras — La Passion du Ski Alpin",
+        lin1_d: "Deux jeunes entraîneurs dynamiques à Mont-Tremblant (U12 2e année) qui m'ont transmis le plaisir pur, l'instinct et le goût du dépassement en ski alpin.",
+        lin2_t: "Mon Père — Expérimentation & Simplicité Directe",
+        lin2_d: "De U14 2e année jusqu'à ma 1re année FIS (pendant la COVID) à Tremblant : une approche expérimentale mais toujours simple, directe et ciblée sur l'élément exact à travailler.",
+        lin3_t: "Jordan Trudel & Claudel May Plouffe — L'Éclosion chez S1 Racing",
+        lin3_d: "Passage au sein de l'équipe privée S1 Racing avec une première saison FIS complète très réussie sous la direction de Jordan Trudel et Claudel May Plouffe.",
+        lin4_t: "Noemi Dalla Costa, Antony Hérisset, Christophe Beauvais & Sascha Sorio",
+        lin4_d: "Alliance de l'éthique de travail acharnée de la jeune coach italienne Noemi Dalla Costa et de l'expérience d'Antony Hérisset, enrichie par la science des trajectoires de l'ancien pilote automobile Christophe Beauvais et la maîtrise profonde du style alpin européen de Sascha Sorio.",
+        lin5_t: "Jonatan Blanchard & Samuel Lacroix — Équipe du Québec",
+        lin5_d: "Sélection au sein de l'Équipe du Québec avec le très expérimenté Jonatan Blanchard et l'approche rigoureuse axée sur les données de Samuel Lacroix, avant ma blessure à Adstock et mon virage vers le coaching.",
+        sec4_tag: "04 // PARCOURS D'ENTRAÎNEUR & EFFECTIF ACTUEL",
+        sec4_title: "Club de Ski Mont Garceau — De U16 à U18 FIS",
+        c_u16_t: "2 Athlètes du Programme Régulier Qualifiés aux Provinciaux",
+        c_u16_d: "Lors de ma première saison comme entraîneur au Mont Garceau avec un groupe U16 de fin de semaine (et Programme Plus), j'ai mené deux athlètes du programme régulier jusqu'aux Championnats Provinciaux.",
+        c_u18_t: "Cohorte U18 FIS Mont Garceau 2026–2027 (8 Athlètes)",
+        c_u18_d: "À la tête de la toute nouvelle équipe U18 FIS (1re année) du Mont Garceau — développement technique, tactique et physique individualisé :",
+        ph2_title: "Équipe U18 FIS Mont Garceau & Analyse Vidéo sur Piste",
+        ph2_sub: "Emplacement pour une photo de groupe au Mont Garceau ou une séance d'analyse vidéo sur neige.",
+        sec5_tag: "05 // ÉCOSYSTÈME NUMÉRIQUE & CONTACT",
+        sec5_title: "Suivre le Labo & Me Contacter",
+        sec5_desc: "Révolutionner l'accès au savoir en ski alpin grâce à des analyses biomécaniques, la physique des trajectoires et le partage d'expérience. Contactez-moi directement sur Instagram ou Facebook.",
+        soc1_d: "Analyses techniques, physique des trajectoires, biomécanique et éducation moderne.",
+        soc2_d: "Éducatifs sur neige, analyse de ligne porte-à-porte et débriefings rapides.",
+        soc3_d: "Parcours personnel, entraînement et messagerie directe pour demandes de coaching.",
+        soc4_d: "Contact pour les parents, directeurs de clubs et la communauté du ski alpin au Québec."
+      }
+    };
+
+    function toggleLanguage() {
+      currentLang = currentLang === 'en' ? 'fr' : 'en';
+      const btn = document.getElementById('langToggle');
+      btn.textContent = currentLang === 'en' ? 'FR // FRANÇAIS' : 'EN // ENGLISH';
+      document.documentElement.lang = currentLang;
+
+      const elements = document.querySelectorAll('[data-i18n]');
+      elements.forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[currentLang][key]) {
+          el.innerHTML = translations[currentLang][key];
+        }
+      });
+    }
+  </script>
+</body>
+</html>
